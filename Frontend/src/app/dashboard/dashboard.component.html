@@ -1,111 +1,103 @@
-<div class="content ht-100v pd-0">
-  <div class="content-body" style="padding: 0px">
+<div class="row" style="margin: 90px 0px 0px 0px;border-bottom: 1px solid #e3e3e3">
+  <div class="col-9">
+    <!--<div id="myfirstchart" style="height: 250px;margin-bottom: 10px"></div>-->
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [title]="chartOptions.title"
+      [plotOptions]="chartOptions.plotOptions"
+      [colors]="chartOptions.colors"
+    ></apx-chart>
+  </div>
 
-    <!--<div class="row" style="background-color: #3B4863">-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
-         style="font-family: 'Century Gothic';color: white;font-size: 23px;font-weight: bold;position: fixed;width: 100%;z-index: 9999">
-      <span>Hawk Eye</span>
-      <i class="fa fa-power-off" style="position: absolute;right: 20px"></i>
-    </nav>
-    <!--</div>-->
-
-    <div class="row" style="margin: 90px 0px 0px 0px;border-bottom: 1px solid #e3e3e3">
-      <div class="col-9">
-        <!--<div id="myfirstchart" style="height: 250px;margin-bottom: 10px"></div>-->
-        <apx-chart
-          [series]="chartOptions.series"
-          [chart]="chartOptions.chart"
-          [xaxis]="chartOptions.xaxis"
-          [title]="chartOptions.title"
-          [plotOptions]="chartOptions.plotOptions"
-          [colors]="chartOptions.colors"
-        ></apx-chart>
+  <div class="col-3">
+    <div class="row"
+         style="font-size: 18px;margin-left: 40px;margin-top: 20px;font-family: 'Century Gothic';font-weight: 600">
+      <div class="col-12">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #f1e100"></i><span
+        style="color: #d7c900">Robberies</span>
       </div>
-
-      <div class="col-3">
-        <div class="row"
-             style="font-size: 18px;margin-left: 40px;margin-top: 20px;font-family: 'Century Gothic';font-weight: 600">
-          <div class="col-12">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #f1e100"></i><span
-            style="color: #d7c900">Robberies</span>
-          </div>
-          <div class="col-12" style="margin-top: 15px">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #ffc008"></i><span
-            style="color: #ffc008">Murders</span>
-          </div>
-          <div class="col-12" style="margin-top: 15px">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #ff8c06"></i><span style="color: #ff8c06">Hit & Run</span>
-          </div>
-          <div class="col-12" style="margin-top: 15px">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #ff1900"></i><span style="color: #ff1900">Sexual Crimes</span>
-          </div>
-          <div class="col-12" style="margin-top: 15px">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #d26402"></i><span
-            style="color: #d26402">Cyber Crimes</span>
-          </div>
-          <div class="col-12" style="margin-top: 15px">
-            <i class="fa fa-circle" style="margin-right: 20px;color: #943c05"></i><span
-            style="color: #943c05">Corruption</span>
-          </div>
-        </div>
+      <div class="col-12" style="margin-top: 15px">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #ffc008"></i><span
+        style="color: #ffc008">Murders</span>
+      </div>
+      <div class="col-12" style="margin-top: 15px">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #ff8c06"></i><span
+        style="color: #ff8c06">Hit & Run</span>
+      </div>
+      <div class="col-12" style="margin-top: 15px">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #ff1900"></i><span
+        style="color: #ff1900">Sexual Crimes</span>
+      </div>
+      <div class="col-12" style="margin-top: 15px">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #d26402"></i><span
+        style="color: #d26402">Cyber Crimes</span>
+      </div>
+      <div class="col-12" style="margin-top: 15px">
+        <i class="fa fa-circle" style="margin-right: 20px;color: #943c05"></i><span
+        style="color: #943c05">Corruption</span>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="row" style="margin: 15px 0px 0px 0px;font-family: 'Century Gothic';height: calc(100vh - 450px)">
-      <div class="col-9">
-        <div class="row">
-          <div class="col-12" style="font-size: 20px;">
+<div class="row" style="margin: 15px 0px 0px 0px;font-family: 'Century Gothic';height: calc(100vh - 450px)">
+  <div class="col-9">
+    <div class="row">
+      <div class="col-12" style="font-size: 20px;">
             <span
               style="border-bottom: 1px solid #e26801;border-right: 1px solid #e26801;padding: 0px 10px 2px 10px;color: #e66b02;font-weight: bold">New Information</span>
-          </div>
+      </div>
 
-          <div class="col-6" style="font-size: 18px;" *ngFor="let message of messages">
-            <div class="row"
-                 style="margin: 10px;padding: 10px;border: 2px solid #cfcfcf;border-radius: 10px;margin-top: 20px">
-              <div class="col-12">
-                <b>Message</b><br>
-                {{message.details}}<br>
-                <b>({{message.time}})</b>
-              </div>
-            </div>
+      <div class="col-6" style="font-size: 18px;" *ngFor="let message of messages">
+        <div class="row"
+             style="margin: 10px;padding: 10px;border: 2px solid #cfcfcf;border-radius: 10px;margin-top: 20px">
+          <div class="col-12">
+            <b>Message</b><br>
+            {{message.details}}<br>
+            <b>({{message.time}})</b>
           </div>
-
         </div>
       </div>
-      <div class="col-3" style="border-left: 1px solid #e3e3e3">
-        <div class="row">
-          <div class="col-12" style="font-size: 20px;">
+
+    </div>
+  </div>
+  <div class="col-3" style="border-left: 1px solid #e3e3e3">
+    <div class="row">
+      <div class="col-12" style="font-size: 20px;">
             <span
               style="border-bottom: 1px solid #e26801;border-right: 1px solid #e26801;padding: 0px 10px 2px 0px;color: #e66b02;font-weight: bold">New User Requests</span>
-          </div>
-        </div>
-        <div class="row" style="margin-left: 5px;font-size: 17px;margin-top: 20px">
-          <div class="col-12" data-toggle="dropdown" style="padding: 0px;margin-top: 10px" *ngFor="let user of users" (click)="setUser(user)">
-            <i class="far fa-user" style="margin-right: 10px"></i> {{user.name}}
-          </div>
+      </div>
+    </div>
+    <div class="row" style="margin-left: 5px;font-size: 17px;margin-top: 20px">
+      <div class="col-12" data-toggle="dropdown" style="padding: 0px;margin-top: 10px" *ngFor="let user of users"
+           (click)="setUser(user)">
+        <i class="far fa-user" style="margin-right: 10px"></i> {{user.name}}
+      </div>
 
-          <div class="dropdown-menu dropdown-menu-left">
-            <!--<div class="dropdown-header">Customer Details</div>-->
-            <span class="dropdown-item">
+      <div class="dropdown-menu dropdown-menu-left">
+        <!--<div class="dropdown-header">Customer Details</div>-->
+        <span class="dropdown-item">
               <span>NIC - {{user.nic}}</span><br>
               <span>Address - {{user.address}}</span><br>
               <span>Email - {{user.email}}</span><br><br>
               <div class="row">
                 <div class="col-6" style="text-align: center">
-                  <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase" (click)="confirmUser(user)">Confirm</button>
+                  <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase"
+                          (click)="confirmUser(user)">Confirm</button>
                 </div>
                 <div class="col-6" style="text-align: center">
-                  <button class="btn btn-sm pd-x-15 btn-warning btn-uppercase" (click)="cancelUser(user)">Decline</button>
+                  <button class="btn btn-sm pd-x-15 btn-warning btn-uppercase"
+                          (click)="cancelUser(user)">Decline</button>
                 </div>
               </div>
           </span>
-          </div><!-- dropdown-menu -->
-        </div>
-      </div>
+      </div><!-- dropdown-menu -->
     </div>
-
-  </div><!-- container -->
+  </div>
 </div>
+
 
 
 
