@@ -5,12 +5,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
          style="font-family: 'Century Gothic';color: white;font-size: 23px;font-weight: bold;position: fixed;width: 100%;z-index: 9999">
       <span>Hawk Eye</span>
-      <i class="fa fa-power-off" (click)="logout()" style="position: absolute;right: 20px" *ngIf="localStorage.getItem('token')==null?false:true"></i>
+      <i class="fa fa-power-off" (click)="logout()" style="position: absolute;right: 20px" *ngIf="isLoggedIn()"></i>
     </nav>
     <!--</div>-->
-<app-login></app-login>
-    <app-login *ngIf="localStorage.getItem('token')==null?true:false"></app-login>
-    <app-dashboard *ngIf="localStorage.getItem('token')==null?false:true"></app-dashboard>
+
+    <app-login *ngIf="!isLoggedIn()"></app-login>
+    <app-dashboard *ngIf="isLoggedIn()"></app-dashboard>
 
   </div><!-- container -->
 </div>

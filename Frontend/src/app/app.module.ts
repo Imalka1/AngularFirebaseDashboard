@@ -14,6 +14,7 @@ import {DatePipe} from "@angular/common";
 import {NgApexchartsModule} from "ng-apexcharts";
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {AngularFireAuthModule} from "@angular/fire/auth";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     NgApexchartsModule,
     // AngularFireDatabaseModule,
-    // AngularFireAuthModule,
+    AngularFireAuthModule,
     // AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LoginService} from "./login.service";
+import {Admin} from "../model/Admin";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  admin = new Admin();
+
+  constructor(private loginService: LoginService) {
+  }
 
   ngOnInit() {
   }
 
+  login() {
+    this.loginService.login(this.admin)
+  }
+
+  anError() {
+    return localStorage.getItem('token') != null ? localStorage.getItem('token') === 'err' ? true : false : false
+  }
 }

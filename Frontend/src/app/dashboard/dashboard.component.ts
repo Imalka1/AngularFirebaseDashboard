@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   user = new User();
   messages = new Array();
 
-  chartBars = [10, 0, 10, 0, 0,0]
+  chartBars = [0, 0, 0, 0, 0, 0]
 
   constructor(private dashboardService: DashboardService, private datePipe: DatePipe) {
     this.chartOptions = {
@@ -68,7 +68,7 @@ export class DashboardComponent implements OnInit {
           ""
         ]
       },
-      colors : ['#f1e100', '#ffc008', '#ff8c06','#ff1900','#d26402','#943c05'],
+      colors: ['#f1e100', '#ffc008', '#ff8c06', '#ff1900', '#d26402', '#943c05'],
     };
   }
 
@@ -79,9 +79,7 @@ export class DashboardComponent implements OnInit {
 
   getUserRequests() {
     this.dashboardService.getUserRequests().subscribe((values => {
-      this.users = new Array<User>();
-      this.messages = new Array();
-      values.map(item => {
+      this.users = values.map(item => {
         let user = new User();
         user.id = item.payload.doc.id
         user.address = item.payload.doc.data()['address']
@@ -89,25 +87,26 @@ export class DashboardComponent implements OnInit {
         user.name = item.payload.doc.data()['name']
         user.nic = item.payload.doc.data()['nic']
         user.accVerify = item.payload.doc.data()['accVerify']
-        this.users.push(user)
 
         if (user.accVerify) {
           this.getCrimes(user.id)
         }
+        return user;
       });
     }))
   }
 
   getCrimes(id) {
     this.dashboardService.getCrimes(id).subscribe((values => {
-      values.map(item => {
+      this.chartBars = [0, 0, 0, 0, 0, 0]
+      this.messages = values.map(item => {
         let message = new Message();
         message.id = item.payload.doc.id
         message.category = item.payload.doc.data()['category'].trim()
         message.details = item.payload.doc.data()['details']
         let messageTime = item.payload.doc.data()['time'].split(' ')
         message.time = messageTime[0] + ' / ' + messageTime[1].split('.')[0]
-        this.messages.push(message)
+        // this.messages.push(message)
 
         if (this.datePipe.transform(new Date(), 'yyyy-MM-dd') === messageTime[0]) {
           if (message.category === 'Robberies') {
@@ -132,6 +131,7 @@ export class DashboardComponent implements OnInit {
         // if(item.payload.doc){
         //   this.generateChart()
         // }
+        return message
       })
     }))
   }

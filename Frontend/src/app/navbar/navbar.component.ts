@@ -16,4 +16,8 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.clear();
   }
+
+  isLoggedIn() {
+    return localStorage.getItem('token') != null ? localStorage.getItem('token') === 'logged' ? true : false : false
+  }
 }
