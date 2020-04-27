@@ -1,1 +1,53 @@
-<p>login works!</p>
+<div class="row" style="margin: 0px">
+  <div class="col-8" style="margin: auto">
+    <ul class="nav nav-line" id="myTab" role="tablist" style="margin-top: 140px;font-family: 'Century Gothic'">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+           aria-selected="true">Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+           aria-selected="false">Sign Up</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+        <style>
+          .fa:hover {
+            color: #687faf
+          }
+        </style>
+
+        <div class="row" style="margin-top: 60px">
+          <div class="col-7">
+            <input type="text" class="form-control" placeholder="Email">
+            <input type="password" class="form-control" placeholder="Password" style="margin-top: 20px">
+          </div>
+          <div class="col-5" style="text-align: center">
+            <i class="fa fa-power-off" style="font-size: 60px;margin-top: 12px;color: #3B4863;cursor: pointer"></i>
+          </div>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+        <div class="row" style="margin-top: 60px">
+          <div class="col-8">
+            <input type="text" class="form-control" placeholder="Email">
+            <input type="password" class="form-control" placeholder="Password" style="margin-top: 20px">
+            <input type="password" class="form-control" placeholder="Confirm Password" style="margin-top: 20px">
+            <input type="text" class="form-control" placeholder="NIC" style="margin-top: 20px">
+            <input type="text" class="form-control" placeholder="Name" style="margin-top: 20px">
+            <input type="text" class="form-control" placeholder="Address" style="margin-top: 20px">
+          </div>
+          <div class="col-4" style="text-align: center">
+            <i class="fa fa-arrow-right" style="font-size: 60px;margin-top: 125px;color: #3B4863;cursor: pointer"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
