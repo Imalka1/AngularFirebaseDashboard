@@ -34,6 +34,7 @@ export class DashboardComponent implements OnInit {
   users = new Array<User>();
   user = new User();
   messages = new Array();
+  message = new Message();
 
   chartBars = [0, 0, 0, 0, 0, 0]
 
@@ -101,9 +102,15 @@ export class DashboardComponent implements OnInit {
       this.chartBars = [0, 0, 0, 0, 0, 0]
       this.messages = values.map(item => {
         let message = new Message();
+        message.userId=id
         message.id = item.payload.doc.id
         message.category = item.payload.doc.data()['category'].trim()
         message.details = item.payload.doc.data()['details']
+        if (item.payload.doc.data()['msgVerify']) {
+          message.msgVerify = 'Verified'
+        } else {
+          message.msgVerify = 'Not Verified'
+        }
         let messageTime = item.payload.doc.data()['time'].split(' ')
         message.time = messageTime[0] + ' / ' + messageTime[1].split('.')[0]
         // this.messages.push(message)
@@ -144,8 +151,17 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.cancelUser(user.id)
   }
 
+  verifyMessage(verify) {
+    this.message.msgVerify = verify
+    this.dashboardService.verifyMessage(this.message)
+  }
+
   setUser(user) {
     this.user = user;
+  }
+
+  setMessage(message) {
+    this.message = message
   }
 
 }
