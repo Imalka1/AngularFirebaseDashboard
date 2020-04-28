@@ -25,7 +25,7 @@ export class DashboardService {
     return this.db.collection('user').doc(id).delete();
   }
 
-  verifyMessage(message){
-    return this.db.collection('user').doc(message.userId).collection('crimes').doc(message.id).set({msgVerify: message.msgVerify}, {merge: true})
+  verifyMessage(message, msgVerify){
+    return this.db.collection('user').doc(message.userId).collection('crimes').doc(message.id).set({msgVerify: msgVerify}, {merge: true})
   }
 }

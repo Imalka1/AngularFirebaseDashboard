@@ -98,11 +98,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getCrimes(id) {
+    console.log(id)
     this.dashboardService.getCrimes(id).subscribe((values => {
       this.chartBars = [0, 0, 0, 0, 0, 0]
       this.messages = values.map(item => {
         let message = new Message();
-        message.userId=id
+        message.userId = id
         message.id = item.payload.doc.id
         message.category = item.payload.doc.data()['category'].trim()
         message.details = item.payload.doc.data()['details']
@@ -134,10 +135,7 @@ export class DashboardComponent implements OnInit {
         this.chartOptions.series = [{
           data: this.chartBars
         }];
-        // this.generateChart()
-        // if(item.payload.doc){
-        //   this.generateChart()
-        // }
+
         return message
       })
     }))
@@ -152,8 +150,7 @@ export class DashboardComponent implements OnInit {
   }
 
   verifyMessage(verify) {
-    this.message.msgVerify = verify
-    this.dashboardService.verifyMessage(this.message)
+    this.dashboardService.verifyMessage(this.message, verify)
   }
 
   setUser(user) {

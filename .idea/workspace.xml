@@ -54,7 +54,7 @@
           <entry key="html" value="2920" />
           <entry key="js" value="7" />
           <entry key="json" value="4" />
-          <entry key="ts" value="2700" />
+          <entry key="ts" value="2712" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -63,7 +63,7 @@
           <entry key="HTML" value="2920" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="7" />
-          <entry key="TypeScript" value="2700" />
+          <entry key="TypeScript" value="2712" />
           <entry key="tsconfig" value="1" />
         </counts>
       </usages-collector>
@@ -100,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+            <state relative-caret-position="196">
+              <caret line="154" column="60" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -109,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+            <state relative-caret-position="476">
+              <caret line="28" column="111" selection-start-line="28" selection-start-column="111" selection-end-line="28" selection-end-column="111" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/Frontend/src/app/login/login.component.html" />
         <option value="$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/Frontend/src/app/model/Message.ts" />
-        <option value="$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.service.ts" />
         <option value="$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.service.ts" />
       </list>
     </option>
   </component>
@@ -257,7 +257,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588064603013" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588074322080" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -297,15 +297,16 @@
       <workItem from="1585460597939" duration="3809000" />
       <workItem from="1586754886045" duration="2358000" />
       <workItem from="1587140635278" duration="1291000" />
-      <workItem from="1587920822471" duration="69233000" />
+      <workItem from="1587920822471" duration="70463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76691000" />
+    <option name="totallyTimeSpent" value="77921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13087249" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -536,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="476">
+          <caret line="28" column="111" selection-start-line="28" selection-start-column="111" selection-end-line="28" selection-end-column="111" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -546,8 +547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+        <state relative-caret-position="196">
+          <caret line="154" column="60" selection-start-line="154" selection-start-column="60" selection-end-line="154" selection-end-column="60" />
         </state>
       </provider>
     </entry>
