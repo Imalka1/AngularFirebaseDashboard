@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="row" style="margin-left: 5px;font-size: 17px;margin-top: 20px">
-      <div class="col-12" data-toggle="dropdown" style="padding: 0px;margin-top: 10px" *ngFor="let user of users"
+      <div class="col-12" data-toggle="dropdown" style="padding: 0px;margin-top: 10px;cursor: pointer" *ngFor="let user of users"
            (click)="setUser(user)">
         <i class="far fa-user" style="margin-right: 10px"></i> {{user.name}}
       </div>
