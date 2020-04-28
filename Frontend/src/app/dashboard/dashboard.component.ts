@@ -142,8 +142,9 @@ export class DashboardComponent implements OnInit {
   }
 
   confirmUser(user) {
-    // this.chartBars = [0, 0, 0, 0, 0, 0]
-    this.messages = new Array();
+    if (!this.user.accVerify) {
+      this.messages = new Array();
+    }
     this.dashboardService.confirmUser(user.id)
   }
 
