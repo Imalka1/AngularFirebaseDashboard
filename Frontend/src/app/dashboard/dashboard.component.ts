@@ -80,6 +80,8 @@ export class DashboardComponent implements OnInit {
 
   getUserRequests() {
     this.dashboardService.getUserRequests().subscribe((values => {
+      this.chartBars = [0, 0, 0, 0, 0, 0]
+      this.messages = new Array();
       this.users = values.map(item => {
         let user = new User();
         user.id = item.payload.doc.id
@@ -98,10 +100,9 @@ export class DashboardComponent implements OnInit {
   }
 
   getCrimes(id) {
-    console.log(id)
     this.dashboardService.getCrimes(id).subscribe((values => {
-      this.chartBars = [0, 0, 0, 0, 0, 0]
-      this.messages = values.map(item => {
+      this.updateDataSet(id)
+      values.map(item => {
         let message = new Message();
         message.userId = id
         message.id = item.payload.doc.id
@@ -114,20 +115,19 @@ export class DashboardComponent implements OnInit {
         }
         let messageTime = item.payload.doc.data()['time'].split(' ')
         message.time = messageTime[0] + ' / ' + messageTime[1].split('.')[0]
-        // this.messages.push(message)
 
         if (this.datePipe.transform(new Date(), 'yyyy-MM-dd') === messageTime[0]) {
           if (message.category === 'Robberies') {
             this.chartBars[0]++
           } else if (message.category === 'Murders') {
             this.chartBars[1]++
-          } else if (message.category === 'Abuse & Rape') {
+          } else if (message.category === 'Hit & Run') {
             this.chartBars[2]++
-          } else if (message.category === 'Financial Crimes') {
+          } else if (message.category === 'Sexual Crimes') {
             this.chartBars[3]++
-          } else if (message.category === 'Bribes') {
+          } else if (message.category === 'Cyber Crimes') {
             this.chartBars[4]++
-          } else if (message.category === 'Bribes') {
+          } else if (message.category === 'Corruption') {
             this.chartBars[5]++
           }
         }
@@ -136,20 +136,33 @@ export class DashboardComponent implements OnInit {
           data: this.chartBars
         }];
 
-        return message
+        this.messages.push(message)
       })
     }))
   }
 
   confirmUser(user) {
+    // this.chartBars = [0, 0, 0, 0, 0, 0]
+    this.messages = new Array();
     this.dashboardService.confirmUser(user.id)
   }
 
   cancelUser(user) {
+    this.updateDataSet(user.id)
+    this.chartBars = [0, 0, 0, 0, 0, 0]
     this.dashboardService.cancelUser(user.id)
   }
 
   verifyMessage(verify) {
+    let ver;
+    if (verify) {
+      ver = 'Verified'
+    } else {
+      ver = 'Not Verified'
+    }
+    if (ver !== this.message.msgVerify) {
+      this.updateDataSet(this.message.userId)
+    }
     this.dashboardService.verifyMessage(this.message, verify)
   }
 
@@ -161,4 +174,26 @@ export class DashboardComponent implements OnInit {
     this.message = message
   }
 
+  updateDataSet(userId) {
+    for (let i = this.messages.length - 1; i >= 0; i--) {
+
+      if (userId === this.messages[i].userId) {
+        if (this.messages[i].category === 'Robberies' && this.chartBars[0] > 0) {
+          this.chartBars[0]--
+        } else if (this.messages[i].category === 'Murders' && this.chartBars[1] > 0) {
+          this.chartBars[1]--
+        } else if (this.messages[i].category === 'Hit & Run' && this.chartBars[2] > 0) {
+          this.chartBars[2]--
+        } else if (this.messages[i].category === 'Sexual Crimes' && this.chartBars[3] > 0) {
+          this.chartBars[3]--
+        } else if (this.messages[i].category === 'Cyber Crimes' && this.chartBars[4] > 0) {
+          this.chartBars[4]--
+        } else if (this.messages[i].category === 'Corruption' && this.chartBars[5] > 0) {
+          this.chartBars[5]--
+        }
+
+        this.messages.splice(i, 1)
+      }
+    }
+  }
 }
