@@ -10,6 +10,7 @@ import {Admin} from "../model/Admin";
 export class LoginComponent implements OnInit {
 
   admin = new Admin();
+  passwordConfirmed = true;
 
   constructor(private loginService: LoginService) {
   }
@@ -21,7 +22,19 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.admin)
   }
 
-  anError() {
-    return localStorage.getItem('token') != null ? localStorage.getItem('token') === 'err' ? true : false : false
+  signUp() {
+    if (this.admin.password === this.admin.confirmPassword) {
+      this.loginService.signup(this.admin)
+    } else {
+      this.admin.signUpSuucess = 2;
+    }
+  }
+
+  confirmPassword() {
+    if (this.admin.password === this.admin.confirmPassword) {
+      this.passwordConfirmed = true;
+    } else {
+      this.passwordConfirmed = false;
+    }
   }
 }

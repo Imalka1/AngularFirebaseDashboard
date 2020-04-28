@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/auth";
 import {Router} from "@angular/router";
 
@@ -7,16 +7,32 @@ import {Router} from "@angular/router";
 })
 export class LoginService {
 
-  constructor(private afAuth: AngularFireAuth,private router: Router) { }
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
+  }
 
   login(admin) {
     this.afAuth.signInWithEmailAndPassword(admin.email, admin.password)
       .then(value => {
-        localStorage.setItem('token','logged')
+        localStorage.setItem('token', 'logged')
+        admin.loginSuccess = false
       })
       .catch(err => {
-        localStorage.setItem('token','err')
-        console.log('Something went wrong: ', err.message);
+        admin.loginSuccess = false
+      });
+  }
+
+  logout() {
+    this.afAuth.signOut()
+      .then((res) => localStorage.clear());
+  }
+
+  signup(admin) {
+    this.afAuth.createUserWithEmailAndPassword(admin.email, admin.password)
+      .then(value => {
+        admin.signUpSuucess = 1
+      })
+      .catch(error => {
+        admin.signUpSuucess = 2
       });
   }
 }
