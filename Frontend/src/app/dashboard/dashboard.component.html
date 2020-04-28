@@ -88,8 +88,8 @@
                           (click)="confirmUser(user)">Confirm</button>
                 </div>
                 <div class="col-6" style="text-align: center">
-                  <button class="btn btn-sm pd-x-15 btn-warning btn-uppercase"
-                          (click)="cancelUser(user)">Decline</button>
+                  <button class="btn btn-sm pd-x-15 btn-warning btn-uppercase" data-toggle="modal" data-target="#exampleModal"
+                          >Decline</button>
                 </div>
               </div>
           </span>
@@ -98,6 +98,24 @@
   </div>
 </div>
 
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 150px">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete this user?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="cancelUser(user)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 

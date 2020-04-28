@@ -22,6 +22,6 @@ export class DashboardService {
   }
 
   cancelUser(id){
-
+    return this.db.collection('user').doc(id).delete();
   }
 }
