@@ -6,4 +6,5 @@ export class Message {
   location;
   time;
   msgVerify;
+  images;
 }

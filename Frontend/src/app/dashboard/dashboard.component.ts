@@ -108,6 +108,9 @@ export class DashboardComponent implements OnInit {
         message.id = item.payload.doc.id
         message.category = item.payload.doc.data()['category'].trim()
         message.details = item.payload.doc.data()['details']
+        message.location = item.payload.doc.data()['location']
+        message.images = item.payload.doc.data()['images']
+        console.log(message.images)
         if (item.payload.doc.data()['msgVerify']) {
           message.msgVerify = 'Verified'
         } else {
