@@ -109,8 +109,11 @@ export class DashboardComponent implements OnInit {
         message.category = item.payload.doc.data()['category'].trim()
         message.details = item.payload.doc.data()['details']
         message.location = item.payload.doc.data()['location']
-        message.images = item.payload.doc.data()['images']
-        console.log(message.images)
+        if (item.payload.doc.data()['images'] != undefined) {
+          for (let i = 0; i < Object.keys(item.payload.doc.data()['images']).length; i++) {
+            message.images.push(item.payload.doc.data()['images']['image' + (i + 1)])
+          }
+        }
         if (item.payload.doc.data()['msgVerify']) {
           message.msgVerify = 'Verified'
         } else {
