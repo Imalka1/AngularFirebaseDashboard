@@ -104,25 +104,27 @@ export class DashboardComponent implements OnInit {
       this.updateDataSet(id)
       values.map(item => {
         let message = new Message();
-        message.userId = id
-        message.id = item.payload.doc.id
-        message.category = item.payload.doc.data()['category'].trim()
-        message.details = item.payload.doc.data()['details']
-        message.location = item.payload.doc.data()['location']
-        if (item.payload.doc.data()['images'] != undefined) {
-          for (let i = 0; i < Object.keys(item.payload.doc.data()['images']).length; i++) {
-            message.images.push(item.payload.doc.data()['images']['image' + (i + 1)])
-          }
-        }
-        if (item.payload.doc.data()['msgVerify']) {
-          message.msgVerify = 'Verified'
-        } else {
-          message.msgVerify = 'Not Verified'
-        }
+
         let messageTime = item.payload.doc.data()['time'].split(' ')
         message.time = messageTime[0] + ' / ' + messageTime[1]
 
         if (this.datePipe.transform(new Date(), 'yyyy-MM-dd') === messageTime[0]) {
+          message.userId = id
+          message.id = item.payload.doc.id
+          message.category = item.payload.doc.data()['category'].trim()
+          message.details = item.payload.doc.data()['details']
+          message.location = item.payload.doc.data()['location']
+          if (item.payload.doc.data()['images'] != undefined) {
+            for (let i = 0; i < Object.keys(item.payload.doc.data()['images']).length; i++) {
+              message.images.push(item.payload.doc.data()['images']['image' + (i + 1)])
+            }
+          }
+          if (item.payload.doc.data()['msgVerify']) {
+            message.msgVerify = 'Verified'
+          } else {
+            message.msgVerify = 'Not Verified'
+          }
+
           if (message.category === 'Robberies') {
             this.chartBars[0]++
           } else if (message.category === 'Murders') {
@@ -136,13 +138,13 @@ export class DashboardComponent implements OnInit {
           } else if (message.category === 'Corruption') {
             this.chartBars[5]++
           }
+
+          this.chartOptions.series = [{
+            data: this.chartBars
+          }];
+
+          this.messages.push(message)
         }
-
-        this.chartOptions.series = [{
-          data: this.chartBars
-        }];
-
-        this.messages.push(message)
       })
     }))
   }

@@ -55,7 +55,7 @@
           <entry key="html" value="3123" />
           <entry key="js" value="7" />
           <entry key="json" value="4" />
-          <entry key="ts" value="3369" />
+          <entry key="ts" value="3378" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -64,7 +64,7 @@
           <entry key="HTML" value="3123" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="7" />
-          <entry key="TypeScript" value="3369" />
+          <entry key="TypeScript" value="3378" />
           <entry key="tsconfig" value="1" />
         </counts>
       </usages-collector>
@@ -104,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+            <state relative-caret-position="-1266">
+              <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -305,12 +305,12 @@
       <workItem from="1588094996627" duration="10231000" />
       <workItem from="1588143957446" duration="6209000" />
       <workItem from="1588305198120" duration="260000" />
-      <workItem from="1588355494898" duration="374000" />
+      <workItem from="1588355494898" duration="1062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97679000" />
+    <option name="totallyTimeSpent" value="98367000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -509,8 +509,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Frontend/src/app/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="122" column="62" selection-start-line="122" selection-start-column="62" selection-end-line="122" selection-end-column="62" />
+        <state relative-caret-position="-1266">
+          <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
         </state>
       </provider>
     </entry>
