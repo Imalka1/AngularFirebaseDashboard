@@ -120,7 +120,7 @@ export class DashboardComponent implements OnInit {
           message.msgVerify = 'Not Verified'
         }
         let messageTime = item.payload.doc.data()['time'].split(' ')
-        message.time = messageTime[0] + ' / ' + messageTime[1].split('.')[0]
+        message.time = messageTime[0] + ' / ' + messageTime[1]
 
         if (this.datePipe.transform(new Date(), 'yyyy-MM-dd') === messageTime[0]) {
           if (message.category === 'Robberies') {
