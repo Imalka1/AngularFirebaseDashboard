@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.14",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "angularfire2": "^5.4.2",
-    "apexcharts": "^3.19.0",
+    "apexcharts": "^3.24.0",
     "bootstrap": "^4.4.1",
     "firebase": "^7.14.2",
     "ng-apexcharts": "^1.2.3",
